@@ -1,6 +1,6 @@
-const GREPSKI = 'αβψδεφγηιξκλμνοπθρσςτυшщщχγζάψέλνόσζжж';
-const POLSKI  = 'abcdefghijklmnopqrsçtuvwšxyząćęłńóśźżř';
-const SOFT    = 'fjlrvwšćńśźż';
+const GREPSKI = 'αβψδεφγηιξκλμνοπθρσςτυшщщχγζάψέλνόσςζжж';
+const POLSKI  = 'abcdefghijklmnopqrsçtuvwšxyząćęłńóśḉźżř';
+const SOFT    = 'fjlrvwšćńḉźż';
 const HARD    = 'cdçtzł';
 
 function transformCharGr(char, endWord) {
@@ -57,7 +57,8 @@ $(document).ready(() => {
         const text = $(this).val()
             .replace(/sz/g, 'š')
             .replace(/rz/g, 'ř')
-            .replace(/s(?:[\s\p{P}\p{S}])/gu, 'ç');
+            .replace(/s(?=[\s\p{P}\p{S}]|$)/gu, 'ç')
+            .replace(/ś(?=[\s\p{P}\p{S}]|$)/gu, 'ḉ');
 
         var output = '';
         var lastIndex = text.length - 1;
