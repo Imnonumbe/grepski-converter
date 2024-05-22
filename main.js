@@ -82,11 +82,12 @@ $(document).ready(() => {
             .replace(/λъ/g, 'ł')
             .replace(/ψь/g, 'ć')
             .replace(/νь/g, 'ń')
-            .replace(/σь/g, 'ś')
+            .replace(/ςь/g, 'ś')
             .replace(/ζь/g, 'ź')
             .replace(/щ́/g, 'sz')
             .replace(/γ́/g, 'y')
-            .replace(/ж́/g, 'rz');
+            .replace(/ж́/g, 'rz')
+            .replace(/ς/g, 's');
 
         var output = '';
         for (var char of text) {
